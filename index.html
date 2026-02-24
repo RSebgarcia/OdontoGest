@@ -1,0 +1,420 @@
+
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Boxicons -->
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link href='https://unpkg.com/boxicons@2.1.4/dist/boxicons.js' rel='stylesheet'>
+
+        <!-- My CSS -->
+        <link rel="stylesheet" href="style.css">
+
+        <title>AdminHub</title>
+    </head>
+    <body>
+
+    <!-- ========= MENÚ LATERAL ========= -->
+    <section id="sidebar">
+        <a href="#" class="brand">
+            <i class='bx bxs-tooth bx-lg'></i>
+            <span class="text">OdontoGest</span>
+        </a>
+        <ul class="side-menu top">
+            <li class="active" data-target="page-dashboard">
+                <a href="#">
+                    <i class='bx bxs-dashboard bx-sm'></i>
+                    <span class="text">Dashboard</span>
+                </a>
+            </li>
+            <li data-target="page-profesionales">
+                <a href="#">
+                    <i class='bx bxs-user-detail bx-sm'></i>
+                    <span class="text">Profesionales</span>
+                </a>
+            </li>
+            <li data-target="page-pacientes">
+                <a href="#">
+                    <i class='bx bxs-group bx-sm'></i>
+                    <span class="text">Pacientes</span>
+                </a>
+            </li>
+            <li data-target="page-practicas">
+                <a href="#">
+                    <i class='bx bxs-first-aid bx-sm'></i>
+                    <span class="text">Prácticas y Precios</span>
+                </a>
+            </li>
+        </ul>
+        <ul class="side-menu">
+            <li data-target="page-configuracion">
+                <a href="#">
+                    <i class='bx bxs-cog bx-sm'></i>
+                    <span class="text">Configuración</span>
+                </a>
+            </li>
+        </ul>
+    </section>
+
+    <!-- ========= CONTENIDO PRINCIPAL ========= -->
+    <section id="content">
+        <nav>
+            <i class='bx bx-menu bx-sm'></i>
+            <div class="date-filters">
+                <label>Desde:</label> <input type="date" value="2024-02-24">
+                <label>Hasta:</label> <input type="date" value="2024-02-24">
+                <button class="btn-filter"><i class='bx bx-filter'></i> Filtrar</button>
+            </div>
+            
+            <input type="checkbox" class="checkbox" id="switch-mode" hidden />
+            <label class="swith-lm" for="switch-mode">
+                <i class="bx bxs-moon"></i>
+                <i class="bx bx-sun"></i>
+                <div class="ball"></div>
+            </label>
+        </nav>
+
+        <main>
+            <!-- ==================== HOJA 1: DASHBOARD ==================== -->
+            <div id="page-dashboard" class="page-content active">
+                <div class="head-title">
+                    <div class="left">
+                        <h1>Reporte Financiero</h1>
+                    </div>
+                    <!-- EL BOTÓN MÁGICO -->
+                    <button id="btn-accion-principal" class="btn-magic pulse-animation">
+                        <i class='bx bx-play-circle'></i>
+                        <span class="text" id="text-accion-principal">Iniciar Caja del Día</span>
+                    </button>
+                </div>
+
+                <!-- KPIs Globales -->
+                <ul class="box-info">
+                    <li>
+                        <i class='bx bxs-up-arrow-circle'></i>
+                        <span class="text">
+                            <h3>Ingresos Totales</h3>
+                            <p class="ars">ARS: $1,263,000</p>
+                            <p class="usd">USD: $600</p>
+                        </span>
+                    </li>
+                    <li>
+                        <i class='bx bxs-down-arrow-circle'></i>
+                        <span class="text">
+                            <h3>Gastos (Consul)</h3>
+                            <p class="ars">ARS: -$787,000</p>
+                            <p class="usd">USD: $0</p>
+                        </span>
+                    </li>
+                    <li>
+                        <i class='bx bxs-bank'></i>
+                        <span class="text">
+                            <h3>Neto Consultorio</h3>
+                            <p class="ars highlight-ars">ARS: $476,000</p>
+                            <p class="usd highlight-usd">USD: $600</p>
+                        </span>
+                    </li>
+                </ul>
+
+                <div class="table-data">
+                    <div class="order" style="flex-basis: 100%;">
+                        <div class="head"><h3>Liquidación Diaria por Profesional (ARS)</h3></div>
+                        <table class="excel-table">
+                            <thead>
+                                <tr>
+                                    <th>Profesional</th>
+                                    <th class="right">TOTAL x prof</th>
+                                    <th class="right">% prof (A Pagar)</th>
+                                    <th class="right">% consul (Ganancia)</th>
+                                    <th class="right">Transf (Adelantos)</th>
+                                    <th class="right">Saldo Final</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Dr. Nick Riviera</td>
+                                    <td class="right">$156,000</td>
+                                    <td class="right">$78,000</td>
+                                    <td class="right">$78,000</td>
+                                    <td class="right">$156,000</td>
+                                    <td class="right negative">-$78,000</td>
+                                </tr>
+                                <tr>
+                                    <td>Bagdadi</td>
+                                    <td class="right">$485,000</td>
+                                    <td class="right">$242,500</td>
+                                    <td class="right">$242,500</td>
+                                    <td class="right">$559,000</td>
+                                    <td class="right negative">-$316,500</td>
+                                </tr>
+                                <tr>
+                                    <td>Orin Scrivello (DDS)</td>
+                                    <td class="right">$532,000</td>
+                                    <td class="right">$0</td>
+                                    <td class="right">$532,000</td>
+                                    <td class="right">$0</td>
+                                    <td class="right positive">$532,000</td>
+                                </tr>
+                                <tr class="totals-row">
+                                    <td>TOTALES</td>
+                                    <td class="right">$1,173,000</td>
+                                    <td class="right">$320,500</td>
+                                    <td class="right">$852,500</td>
+                                    <td class="right">$715,000</td>
+                                    <td class="right positive">$137,500</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="order" style="flex-basis: 60%;">
+                        <div class="head"><h3>Transacciones Registradas</h3></div>
+                        <table>
+                            <thead><tr><th>Concepto</th><th>Paciente</th><th>Monto</th><th>Tipo</th></tr></thead>
+                            <tbody>
+                                <tr><td>Blanqueamiento</td><td>Moria Casán</td><td><span class="status completed">$80,000</span></td><td><span class="badge regular">Práctica</span></td></tr>
+                                <tr><td>Implante Oro (Adelanto)</td><td>Ricardo Fort</td><td><span class="status completed-usd">$500 USD</span></td><td><span class="badge sena">Seña</span></td></tr>
+                                <tr><td>Retiro de Dinero</td><td>Dr. Nick Riviera</td><td><span class="status pending">-$156,000</span></td><td><span class="badge regular">Adelanto</span></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="todo" style="flex-basis: 30%;">
+                        <div class="head"><h3>Fondos del Día</h3></div>
+                        <ul class="todo-list caja-list">
+                            <li>
+                                <p>CAJA CHICA (Efectivo Fijo)</p>
+                                <h3 class="ars" id="display-caja-chica">No iniciada</h3>
+                            </li>
+                            <li>
+                                <p>FONDO PRÓTESIS</p>
+                                <h3 class="ars" id="display-protesis">No iniciada</h3>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==================== HOJA 2: PROFESIONALES ==================== -->
+            <div id="page-profesionales" class="page-content">
+                <div class="head-title"><div class="left"><h1>Profesionales</h1></div><a href="#" class="btn-add">➕ Nuevo Dr.</a></div>
+                <div class="table-data"><div class="order">
+                    <table>
+                        <thead><tr><th>Nombre</th><th>Especialidad / Notas</th><th>Comisión (%)</th></tr></thead>
+                        <tbody>
+                            <tr><td><p>Dra. Mishu Bagdadi</p></td><td>Odontología General</td><td>50%</td></tr>
+                            <tr><td><p>Dra. Ana Rodriguez</p></td><td>Ortodoncia Integral</td><td>40%</td></tr>
+                            <tr><td><p>Dr. Nick Riviera</p></td><td>"Hola a todos!". Cobra barato, usa gotita.</td><td>70%</td></tr>
+                            <tr><td><p>Dr. Orin Scrivello (DDS)</p></td><td>Le gusta un poco demasiado extraer muelas.</td><td>30%</td></tr>
+                            <tr><td><p>Dr. Hugo Hackenbush</p></td><td>Atiende caballos en su tiempo libre.</td><td>45%</td></tr>
+                        </tbody>
+                    </table>
+                </div></div>
+            </div>
+
+            <!-- ==================== HOJA 3: PACIENTES ==================== -->
+            <div id="page-pacientes" class="page-content">
+                <div class="head-title"><div class="left"><h1>Pacientes VIP</h1></div><a href="#" class="btn-add">➕ Nuevo Paciente</a></div>
+                <div class="table-data"><div class="order">
+                    <table>
+                        <thead><tr><th>Nombre</th><th>Teléfono</th><th>Historial Médico / Notas</th></tr></thead>
+                        <tbody>
+                            <tr><td><p>Ricardo Fort</p></td><td>Miami: 555-MAIAAAMEEE</td><td>Alergia a lo barato. Paga solo en Dólares Cara Grande.</td></tr>
+                            <tr><td><p>Mirtha Legrand</p></td><td>Privado</td><td>Requiere anestesia vintage (cosecha 1920). Dientes originales (sorprendentemente).</td></tr>
+                            <tr><td><p>Lionel Messi</p></td><td>+34 999 GOAT</td><td>Cuidar mucho la mordida, la usa para morder medallas.</td></tr>
+                            <tr><td><p>Moria Casán</p></td><td>11-MIA-AMOR</td><td>"Si querés llorar, llorá" (Pero no en el sillón). Lengua karateka requiere separador doble.</td></tr>
+                            <tr><td><p>Pepito Preguntón</p></td><td>11-1234-5678</td><td>Saca turno hace 3 meses y cancela 5 minutos antes. Cobrar seña obligatoria.</td></tr>
+                        </tbody>
+                    </table>
+                </div></div>
+            </div>
+            
+           <!-- ==================== HOJA 4: PRÁCTICAS ==================== -->
+            <div id="page-practicas" class="page-content">
+                <div class="head-title">
+                    <div class="left"><h1>Prácticas y Precios Base</h1></div>
+                    <a href="#" class="btn-add">➕ Nueva Práctica</a>
+                </div>
+                <div class="table-data">
+                    <div class="order">
+                        <div class="head">
+                            <h3>Catálogo de Tratamientos</h3>
+                            <p style="font-size: 14px; color: var(--dark-grey);">El "Costo Fijo" se descontará automáticamente como ganancia del consultorio.</p>
+                        </div>
+                        <table>
+                            <thead><tr><th>Descripción</th><th>Precio Sugerido (Cobro)</th><th>Costo de Materiales / Laboratorio</th><th>Acciones</th></tr></thead>
+                            <tbody>
+                                <tr><td><p>Prótesis Completa</p></td><td>$500,000 ARS</td><td class="negative">-$200,000 ARS (Fondo Prótesis)</td><td><i class='bx bxs-edit' style="cursor:pointer"></i></td></tr>
+                                <tr><td><p>Implante de Oro (VIP)</p></td><td>$500 USD</td><td class="negative">-$150 USD (Importación)</td><td><i class='bx bxs-edit' style="cursor:pointer"></i></td></tr>
+                                <tr><td><p>Consulta General</p></td><td>$25,000 ARS</td><td>$0</td><td><i class='bx bxs-edit' style="cursor:pointer"></i></td></tr>
+                                <tr><td><p>Blanqueamiento Láser</p></td><td>$80,000 ARS</td><td class="negative">-$15,000 ARS (Insumos)</td><td><i class='bx bxs-edit' style="cursor:pointer"></i></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==================== HOJA 5: CONFIGURACIÓN ==================== -->
+            <div id="page-configuracion" class="page-content">
+                <div class="head-title"><div class="left"><h1>Configuración del Sistema</h1></div></div>
+                <div class="settings-container">
+                    
+                    <div class="settings-card">
+                        <h3><i class='bx bx-wallet'></i> Parámetros Contables</h3>
+                        <div class="setting-item">
+                            <label>Alerta de Caja Chica (ARS)</label>
+                            <input type="number" value="20000">
+                            <small>Avisar si el efectivo fijo baja de este monto.</small>
+                        </div>
+                        <div class="setting-item" style="margin-top: 15px;">
+                            <label>Comisión Por Defecto (General)</label>
+                            <input type="number" value="40">
+                            <small>% que se lleva el profesional si no tiene uno específico.</small>
+                        </div>
+                    </div>
+
+                    <div class="settings-card">
+                        <h3><i class='bx bx-calendar-event'></i> Gastos Fijos (Débito Automático)</h3>
+                        <div class="setting-item">
+                            <ul class="todo-list">
+                                <li class="completed" style="border-left: 5px solid var(--red);">
+                                    <p>Alquiler Consultorio (Día 5)</p>
+                                    <h4 class="ars">-$350,000</h4>
+                                </li>
+                                <li class="completed" style="border-left: 5px solid var(--red);">
+                                    <p>Suscripción Software (Día 10)</p>
+                                    <h4 class="usd">-$50 USD</h4>
+                                </li>
+                            </ul>
+                            <button class="btn-add" style="width: 100%; margin-top: 15px;">➕ Programar Nuevo Gasto</button>
+                        </div>
+                    </div>
+
+                    <div class="settings-card">
+                        <h3><i class='bx bx-lock-alt'></i> Seguridad y Respaldo</h3>
+                        <div class="setting-item check-group">
+                            <input type="checkbox" id="backup-auto" checked>
+                            <label for="backup-auto">Hacer copia de seguridad al cerrar caja</label>
+                        </div>
+                        <button class="btn-magic" style="background: var(--dark-grey); margin-top: 20px; width: 100%;">
+                            <i class='bx bx-download'></i> Descargar Base de Datos
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- ==================== ZONA DE MODALES ==================== -->
+    <!-- ========================================================= -->
+
+    <!-- MODAL 1: RITUAL DE INICIO DE CAJA -->
+    <div id="modal-inicio-caja" class="modal-overlay">
+        <div class="modal-content small-modal">
+            <span class="close-modal">&times;</span>
+            <h2>Ritual de Inicio de Caja 🌅</h2>
+            <p style="margin-bottom: 20px; color: var(--dark-grey);">Confirma los fondos con los que abre el consultorio hoy.</p>
+            
+            <div class="form-group">
+                <label>Efectivo Fijo en Caja Chica (Cambio ARS)</label>
+                <input type="number" id="input-caja-chica" class="large-input" value="90000">
+            </div>
+            <div class="form-group" style="margin-top: 15px;">
+                <label>Fondo de Laboratorio / Prótesis (ARS)</label>
+                <input type="number" id="input-protesis" class="large-input" value="1900000">
+            </div>
+
+            <button id="btn-confirmar-inicio" class="btn-submit-huge" style="background: var(--orange); width: 100%; margin-top: 25px;">
+                <i class='bx bx-check-double'></i> Abrir Consultorio
+            </button>
+        </div>
+    </div>
+
+    <!-- MODAL 2: CARGAR MOVIMIENTO (EL WIZARD DINÁMICO) -->
+    <div id="modal-carga-movimiento" class="modal-overlay">
+        <div class="modal-content large-modal">
+            <span class="close-modal">&times;</span>
+            <h2>Registrar Operación 🧾</h2>
+            
+            <form class="easy-form" style="margin-top: 20px;">
+                <!-- Fila 1: Tipo y Moneda -->
+                <div class="form-row">
+                    <div class="form-group" style="flex: 2;">
+                        <label>1. ¿Qué tipo de operación es?</label>
+                        <select id="tipo-operacion" class="large-input">
+                            <option value="ingreso">Cobro de Práctica / Tratamiento</option>
+                            <option value="sena">Cobro de una Seña / Adelanto de Paciente</option>
+                            <option value="gasto">Gasto del Consultorio / Compra Insumos</option>
+                            <option value="retiro">Retiro de Dinero / Pago a Profesional</option>
+                        </select>
+                    </div>
+                    <div class="form-group" style="flex: 1;">
+                        <label>Moneda</label>
+                        <select class="large-input" style="background-color: var(--light-blue); font-weight: bold;">
+                            <option>ARS (Pesos)</option>
+                            <option>USD (Dólares)</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- Fila 2: Concepto y Monto -->
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label>2. Detalle / Concepto</label>
+                        <!-- Este select cambiará dinámicamente según si es ingreso o gasto -->
+                        <select id="select-concepto" class="large-input">
+                            <option>Blanqueamiento Láser</option>
+                            <option>Consulta General</option>
+                            <option>Prótesis Completa</option>
+                        </select>
+                    </div>
+                    <div class="form-group half">
+                        <label>Monto</label>
+                        <input type="number" class="large-input" value="80000">
+                    </div>
+                </div>
+
+                <!-- LÓGICA CONDICIONAL: SE MUESTRA SI ES INGRESO -->
+                <div id="seccion-ingreso">
+                    <div class="form-group check-group highlight-box" style="margin-bottom: 25px;">
+                        <input type="checkbox" id="tiene-sena">
+                        <label for="tiene-sena" style="font-size: 16px; font-weight: bold; cursor:pointer;">¿Descontar una seña previa?</label>
+                        <select class="large-input hidden-select" style="margin-top:10px;"><option>Ricardo Fort (-$500 USD)</option></select>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label>3. Paciente</label>
+                            <select class="large-input"><option>Moria Casán</option><option>Lionel Messi</option></select>
+                        </div>
+                        <div class="form-group half">
+                            <label>4. Profesional que atiende</label>
+                            <select class="large-input"><option>Dr. Nick Riviera (70%)</option><option>Dra. Bagdadi (50%)</option></select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LÓGICA CONDICIONAL: SE MUESTRA SI ES GASTO/RETIRO -->
+                <div id="seccion-gasto" style="display: none;">
+                    <div class="form-group highlight-box" style="background: var(--light-orange); border-color: var(--orange);">
+                        <label style="color: var(--dark); font-size: 18px;"><i class='bx bx-wallet'></i> ¿De dónde sale el dinero?</label>
+                        <select class="large-input" style="margin-top: 10px;">
+                            <option>Caja Chica (Efectivo del día)</option>
+                            <option>Fondo de Prótesis</option>
+                            <option>Cuenta Bancaria Consultorio</option>
+                            <option>Ganancia General Consultorio</option>
+                        </select>
+                        <small style="margin-top: 5px; display: block; color: var(--dark-grey);">Esto descontará el monto directamente del fondo seleccionado.</small>
+                    </div>
+                </div>
+
+                <button type="button" class="btn-submit-huge" onclick="alert('Movimiento Guardado en la Base de Datos!')" style="width: 100%; margin-top: 30px;"><i class='bx bx-save'></i> Guardar Movimiento</button>
+            </form>
+        </div>
+    </div>
+<script src="app.js"></script>
+</body>
+</html>
